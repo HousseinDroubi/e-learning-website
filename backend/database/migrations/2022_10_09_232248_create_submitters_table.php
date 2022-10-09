@@ -9,19 +9,17 @@ return new class extends Migration
     
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('submitters', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->integer('user_type')->default('0');
-            $table->string('profile_url');
+            $table->integer("assignment_id");
+            $table->integer("student_id");
+            $table->string("submit");
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('submitters');
     }
 };
