@@ -11,5 +11,5 @@ Route::group(["prefix"=> "v0.1"], function(){
    });
    Route::post("/register", [AuthController::class, "register"])->name("register");
    Route::post("/login", [AuthController::class, "login"])->name("login");
-   Route::get("/not_found", [LandingController::class, "notFound"])->name("not-found");
+   Route::get("/not_found", [AuthController::class, "notFound"])->name("not-found");
 });

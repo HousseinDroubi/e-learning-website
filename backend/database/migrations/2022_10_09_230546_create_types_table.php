@@ -11,6 +11,7 @@ return new class extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->id();
+            $table->integer("type_id");
             $table->string("user_type");
             $table->timestamps();
         });
